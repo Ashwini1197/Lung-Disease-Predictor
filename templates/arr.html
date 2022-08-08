@@ -1,0 +1,304 @@
+<html>
+<head>
+<title>Report</title>
+<!--<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+    border: 50px;
+    border-color: black;
+}
+
+/* Center website */
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    display: none; 
+    border: 50px;
+    border-color: black;
+    outline-color: black/* Hide columns by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: grid;
+    clear: both;
+    
+}
+
+/* Content */
+body {
+    background-image: url("images.jpg");
+    background-color: #D1F8F6;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  border-radius: 12px;
+    width: 250px;
+  padding: 20px 24px;
+  background-color: white;
+  color: black;
+text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Add a dark background color to the active button */
+.btn.active {
+  background-color:white ;
+   color: black;
+}
+</style>
+
+
+<script>
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1); 
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+<style>
+    table, th,td
+        {
+            border:1px solid black;
+            border-collapse: collapse;
+            
+            
+        }
+        th,td
+        {
+            padding: 25px;
+        }
+    table{
+        width: 100%;
+    }
+    table#t01 tr:nth-child(even)
+    {
+        background-color: #eee;
+        
+    }
+    table#t01 tr:nth-child(odd)
+    {
+        background-color: #fff;
+        
+    }
+    table#t01 th
+    {
+        background-color: black;
+        color: white;
+        
+    }
+    </style>
+</head>
+<h1>REPORT</h1>
+
+<body>
+
+<div id="myBtnContainer">
+  <button class="btn" onclick="filterSelection('1')"> Train & Test Graph</button>
+    <button class="btn" onclick="filterSelection('2')">Prediction</button>
+    <button class="btn" onclick="filterSelection('3')">Analysis</button>
+     
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column 1">
+    <div class="content">
+      <img src="/static/Svm1_train.png" alt="I1" style="width:500px;height:500px;" >
+      <h3>svm1_train</h3>
+    </div>
+  </div>
+ 
+    
+    <div class="column 1">
+    <div class="content">
+      <img src="/static/Nb1_train.png" alt="I2" style="width:500px;height:500px;">
+      <h3>nb1_train</h3>
+    </div>
+  </div>
+    
+    
+    <div class="column 1">
+    <div class="content">
+      <img src="/static/Lr1_train.png" alt="I3" style="width:500px;height:500px;">
+      <h3>lr1_train</h3>
+    </div>
+  </div>
+    
+    
+    
+    <div class="column 1">
+    <div class="content">
+      <img src="/static/Rf1_train.png" alt="I4" style="width:500px;height:500px;">
+      <h3>rf1_train</h3>
+    </div>
+  </div>
+    
+    
+ 
+    <div class="column 2">
+    <div class="content">
+    <table id="t01">
+    <tr>
+    <th>Classifier</th>
+    <th>Prediction</th>
+    <th>Accuracy</th>
+    </tr>
+    <tr>
+    <td>Logistic Regression</td>
+    <td>{{pred1}}</td>
+    <td>{{Accuracy1}}</td>
+    </tr>
+    <tr>
+    <td>Naive Bayes</td>
+    <td>{{pred2}}</td>
+    <td>{{Accuracy2}}</td>
+        </tr>
+    <tr>
+    <td>SVM</td>
+    <td>{{pred3}}</td>
+    <td>{{Accuracy3}}</td>
+    </tr>
+    <tr>
+    <td>Random Forest</td>
+    <td>{{pred4}}</td>
+    <td>{{Accuracy4}}</td>
+    </tr>
+    
+    </table>
+    <br><br>
+    <h2> <u>Result : </u> The severity of {{pred4}} is {{sev}}.</h2>     
+    </div>
+  </div>
+    
+    
+  
+    <div class="column 3">
+    <div class="content">
+	  <img src="/static/Pie_1.png" alt="I5" style="width:450px;height:450px;" >
+      <h3>pie_chart</h3>
+      
+    </div>
+  </div>
+    
+    
+    <div class="column 3">
+    <div class="content">
+	  <img src="/static/Pie_2.png" alt="I6" style="width:450px;height:450px;" >
+      <h3>pie_chart</h3>
+      
+    </div>
+  </div>
+    
+    
+    <div class="column 3">
+    <div class="content">
+	  <img src="/static/Pie_3.png" alt="I7" style="width:450px;height:450px;" >
+      <h3>pie_chart</h3>
+      
+    </div>
+  </div>
+ 
+    
+    
+    
+    
+    
+ 
+<!-- END GRID -->
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,113 @@
+.header{
+	color:orange;
+	text-align:center;
+	background-color:black;
+	height:50px;
+	margin:10px;
+}
+
+.inner_header{
+	width:100%;
+	margin:auto;
+}
+
+a
+{
+	text-decoration:none;
+}
+img{
+	height:40px;
+	width:40px;
+}
+
+.link{
+	text-decoration: none; 
+	background-color: transparent; 
+	color:#ffffff;
+}
+
+.logo{
+	float: left; 
+	height: 30px; 
+	margin:5px;
+ 	font-size: 30px; 
+	font-weight: bold;
+}
+
+.signup{
+	float:right;
+	height: 30px; 
+	padding: 15px 15px; 
+	font-size:16px;
+	font-weight: bold;	
+}
+
+.sign
+{
+	padding-left:50px;
+	padding-right:80px;
+	margin-bottom:100px;
+}
+
+.footer_sign
+{
+	margin-top:500px;
+}
+
+footer{
+	color:white;
+	background-color:black;
+	height:30px;
+	margin:10px;
+}
+
+.banner_image{
+	height:515px;
+	padding-bottom: 50px;
+	margin:10px;	
+	text-align: center; 
+	color: #f8f8f8; 
+	background: url("static/doctor.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.body {
+ background-image: url("static/img1.jpg");
+ background-color: #cccccc;
+}
+
+.content
+{
+	font-size:20px;
+	font-weight: bold;
+	background:rgba(0,0,0,0.7);
+	padding:40px 0px 40px 0px;
+}
+
+
+.inner_banner{
+	width:40%;
+	padding-top:15%;
+	margin:auto;
+}
+
+.appoint_body{
+	height:515px;
+	padding-bottom: 5%;
+	margin:10px;	 	
+	background: url("appointment.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.inner_appoint{
+	width:30%;
+	padding-top:7%;
+	margin-left:10%
+}
+
+.appoint_content{
+	font-size:20px;
+	font-weight: bold;
+	background:rgba(255,255,255,0.8);
+	padding:40px 0px 40px 50px;
+}

@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>View</title>
+<!--<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+}
+
+/* Center website */
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.row {
+    margin: 8px -20px;
+}
+    
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: center;
+    width: 40%;
+    display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+}
+
+
+
+</style>
+    </head>
+    <body>
+    <h2>Graphs:</h2>
+       <div class ="row">
+      <img src="/static/svm1_train.png" alt="I1" style="width:400px;height:400px;" >
+      <h4>svm1_train</h4>
+       
+      <img src="/static/nb1_train.png" alt="I2" style="width:400px;height:400px;">
+      <h4>nb1_train</h4>
+    
+      <img src="/static/lr1_train.png" alt="I3" style="width:400px;height:400px;">
+      <h4>lr1_train</h4>
+    
+      <img src="/static/rf1_train.png" alt="I4" style="width:400px;height:400px;">
+      <h4>rf1_train</h4>
+    </div>
+    
+       
+        
+    <h2>Logistic Regression</h2>
+    <h2>{{ cm1 }}</h2>
+    <h2>accuracy:</h2>
+	<h2>{{ Accuracy1 }}</h2>
+
+          
+    <h2>Naive Bayes</h2>
+    <h2>{{ cm2 }}</h2>
+	<h2>{{ Accuracy2 }}</h2>
+      
+      
+    <h2>SVM</h2>
+    <h2>{{ cm3 }}</h2>
+	<h2>{{ Accuracy3 }}</h2>
+      
+    
+    <h2>Random Forest</h2>
+    <h2>{{ cm4 }}</h2>
+	<h2>{{ Accuracy4 }}</h2>
+    </body>
+</html>
+    
+    

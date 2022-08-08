@@ -1,0 +1,266 @@
+<html>
+<head>
+<title>View</title>
+<!--<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+}
+
+/* Center website */
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: center;
+    width: 33.33%;
+    display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background color to the active button */
+.btn.active {
+  background-color: #666;
+   color: white;
+}
+</style>
+
+
+<script>
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1); 
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</head>
+<h1>VIEW</h1>
+
+<body>
+
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('1')"> Train & Test Graph</button>
+    <button class="btn" onclick="filterSelection('2')">Confusion Matrix and Accuracy</button>
+    <button class="btn" onclick="filterSelection('3')">Analysis</button>
+    <button class="btn" onclick="filterSelection('4')">Severity</button>
+
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column 1">
+    <div class="content">
+      <img src="/static/svm1_train.png" alt="I1" style="width:400px;height:400px;" >
+      <h4>svm1_train</h4>
+    </div>
+  </div>
+ 
+    
+    <div class="column 1">
+    <div class="content">
+      <img src="/static/nb1_train.png" alt="I2" style="width:400px;height:400px;">
+      <h4>nb1_train</h4>
+    </div>
+  </div>
+    
+    
+    <div class="column 1">
+    <div class="content">
+      <img src="/static/lr1_train.png" alt="I2" style="width:400px;height:400px;">
+      <h4>lr1_train</h4>
+    </div>
+  </div>
+    
+    
+    
+    <div class="column 1">
+    <div class="content">
+      <img src="/static/rf1_train.png" alt="I2" style="width:400px;height:400px;">
+      <h4>rf1_train</h4>
+    </div>
+  </div>
+    
+    
+ 
+    <div class="column 2">
+    <div class="content">
+    <h2>Logistic Regression</h2>
+    <h2>Accuracy</h2>
+	<h2>{{ Accuracy1 }}</h2>
+      
+    </div>
+  </div>
+    
+    
+    <div class="column 2">
+    <div class="content">
+    <h2>Naive Bayes</h2>
+    <h2>Accuracy</h2>
+	<h2>{{ Accuracy2 }}</h2>
+      
+    </div>
+  </div>
+    
+    
+    <div class="column 2">
+    <div class="content">
+    <h2>SVM</h2>
+    <h2>Accuracy :</h2>
+	<h2>{{ Accuracy3 }}</h2>
+      
+    </div>
+  </div>
+    
+    
+    <div class="column 2">
+    <div class="content">
+    <h2>Random Forest</h2>
+    <h2>Accuracy</h2>
+	<h2>{{ Accuracy4 }}</h2>
+      
+    </div>
+  </div>
+  
+    <div class="column 3">
+    <div class="content">
+	  <img src="/static/pie.png" alt="I3" style="width:400px;height:400px;" >
+      <h4>pie_chart</h4>
+      
+    </div>
+  </div>
+    
+  
+    
+    <div class="column 3">
+    <div class="content">
+	  <img src="/static/pie1.png" alt="I4" style="width:400px;height:400px;" >
+      <h4>pie_chart</h4>
+      
+    </div>
+  </div>
+    
+    
+    <div class="column 3">
+    <div class="content">
+	  <img src="/static/pie2.png" alt="I5" style="width:400px;height:400px;" >
+      <h4>pie_chart</h4>
+      
+    </div>
+  </div>
+
+ <div class="column 4">
+    <div class="content">
+    <h2>Severity</h2>
+	<h2>{{ sev }}</h2>
+      
+    </div>
+  </div>
+ 
+ 
+<!-- END GRID -->
+</div>
+</body>
+</html>
+
+
+

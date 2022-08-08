@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+   
+
+    
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <div class="jumbotron text-center">
+ <link rel="stylesheet" type="text/css" href="static/style.css">
+     <style>
+   
+  
+input[type=text] {
+  width: 300px;
+  height: 50px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 7px;
+  box-sizing: border-box;
+  align-items: center;
+  align-content: center;
+
+}
+input[type=number]{
+  width: 300px;
+  height: 45px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 7px;
+  box-sizing: border-box;
+  align-items: center;
+  align-content: center;
+}
+
+body {
+    
+    background-color: #D1F8F6;
+}         
+button {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  }
+  input[type=submit]:hover {
+  background-color: #45a049;
+}  
+select{
+  width: 300px;
+  height: 50px;
+  padding: 5px 20px;
+  border-radius: 7px;
+  color: black;
+} 
+
+label {
+  display: inline-block;
+  width: 100px; }
+
+th,{
+  padding: 10px;
+  padding-left: 100px;
+}
+td.name{
+  padding: 10px;
+  padding-left: 100px;
+}
+td
+{
+  padding-left: 50px;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+h2 { 
+  display: block;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+.header{
+    color:orange;
+    text-align:center;
+    background-color:black;
+    height:50px;
+    margin:10px;
+}
+
+.inner_header{
+    width:100%;
+    margin:auto;
+}
+
+a
+{
+    text-decoration:none;
+}
+img{
+    height:40px;
+    width:40px;
+}
+
+.link{
+    text-decoration: none; 
+    background-color: transparent; 
+    color:#ffffff;
+}
+
+.logo{
+    float: left; 
+    height: 30px; 
+    margin:5px;
+    font-size: 30px; 
+    font-weight: bold;
+}
+.footer_sign
+{
+    margin-top:500px;
+}
+
+footer{
+    color:white;
+    background-color:black;
+    height:30px;
+    margin:10px;
+}
+   </style>
+     
+ 
+        <title> Pulmonologist Assistance System </title>
+        <link rel=stylesheet href="static/ass1.css" type=text/css> 
+    </head>
+    <body>
+
+
+        <div class="header">
+            <div class="inner_header">
+                <div class="logo">
+                    
+                    Pulmonologist Assistance System
+                </div>
+            </div>
+        </div>
+<br><br>
+<form method = "POST" action="/result" class="form-horizontal">
+   <fieldset style="border: solid; margin-left: 300px; margin-right: 300px; padding: 50px; width: 700px; background-color:#D1F8F6;">
+     
+
+    <div class="form-group">
+
+        <label for="fev1" class="control-label col-xs-2"><h3>FEV1</h3></label>
+
+        <div class="col-xs-10">
+
+            <input type="number" step="any" pattern="[-+]?[0-9]*[.,]?[0-9]+" class="form-control" id="fev1" placeholder="FEV1" name="fev1">
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="fvc" class="control-label col-xs-2"><h3>FVC</h3></label>
+
+        <div class="col-xs-10">
+
+            <input type="number" step="any" pattern="[-+]?[0-9]*[.,]?[0-9]+" class="form-control" id="fvc" placeholder="FVC" name="fvc">
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="Age" class="control-label col-xs-2"><h3>AGE</h3></label>
+
+        <div class="col-xs-10">
+
+            <input required type="number" class="form-control" id="age" placeholder="AGE" name="age">
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="gender" class="control-label col-xs-2"><h3>Gender:</h3></label>
+        <div class="col-xs-10">
+        <br>
+        <label><input type="radio" name="gender" value="Female" required>Female</label>
+        <label><input type="radio" name="gender" value="Male">Male</label>
+        </div>
+    </div>
+    
+
+    <div class="form-group">
+        
+    <label for="smoker" class="control-label col-xs-2"><h3>Smoking:</h3></label>
+    <div class="col-xs-10">
+    <br>
+    <label><input type="radio" name="smoke" value="Yes" required>Yes</label>
+    <label><input type="radio" name="smoke" value="No">No</label>
+    </div>
+    </div>
+
+   
+
+     <div class="form-group">
+
+        <label for="bmi" class="control-label col-xs-2"><h3>BMI</h3></label>
+
+        <div class="col-xs-10">
+
+            <input type="number" step="any" pattern="[-+]?[0-9]*[.,]?[0-9]+" class="form-control" id="bmi" placeholder="BMI">
+
+        </div>
+
+    </div>
+
+   
+  
+  <br><br>
+  <center>
+  <input type="submit" value="SUBMIT" style=" border-radius: 8px; border: 2px solid; cursor: pointer;text-align: center;font-size: 20px; color:orange;border-colro: gray; padding: 10px 20px ;font-weight: bold;" ></center>
+
+       </fieldset> 
+       <div class="form-group">
+
+        <div class="col-xs-offset-2 col-xs-10">
+
+       
+        </div>
+    </div>
+            
+        
+  <footer>
+  <center>At your service always | Contact Us @ 88888 00000</center>
+  </footer>       
+          
+          
+          
+            
+</form>

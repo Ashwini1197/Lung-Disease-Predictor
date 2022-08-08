@@ -1,0 +1,96 @@
+
+<html>
+<head>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>    </head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
+<body>
+<h1>REPORT</h1>
+<h2>SPIROMETRY TEST PARAMETERS</h2>
+<div id="tablePrint"> </div>
+<script language="javascript" type="text/javascript">
+<!--
+
+var myArray    = new Array();
+    myArray[0] = 2.8;
+    myArray[1] = 2.218;
+    myArray[2] = 2.3;
+    myArray[3] = 2.2;
+    myArray[4] = Math.round((myArray[0]/myArray[2])*100)/100;
+    myArray[5] = Math.round((myArray[1]/myArray[3])*100)/100;
+    myArray[6] = 37;
+    myArray[7] = 44;
+
+    var myTable= "<table><tr><td style='width: 150px;color: black;'>Parameters</td>";
+    myTable+= "<td style='width: 150px; color: black; text-align: right;'>PRE</td>";
+    myTable+="<td style='width: 150px; color: black; text-align: right;'>POST</td></tr>";
+
+    myTable+="<tr><td style='width: 150px;'>FEV1</td>";
+    myTable+="<td style='width: 150px; text-align: right;'>" + myArray[0] + "</td>";
+    myTable+="<td style='width: 150px; text-align: right;'>" + myArray[1] + "</td></tr>";
+  
+    myTable+="<tr><td style='width: 150px;'>FVC</td>";
+    myTable+="<td style='width: 150px; text-align: right;'>" + myArray[2] + "</td>";
+    myTable+="<td style='width: 150px; text-align: right;'>" + myArray[3] + "</td></tr>";
+  
+    myTable+="<tr><td style='width: 150px; '>FEV1/FVC</td>";
+    myTable+="<td style='width: 150px; text-align: right;'>" + myArray[4] + "</td>";
+    myTable+="<td style='width: 150px; text-align: right;'>" + myArray[5] + "</td></tr>";
+    
+    myTable+="<tr><td style='width: 150px;'>Lung Age</td>";
+    myTable+="<td style='width: 150px; text-align: right;'>" + myArray[6] + "</td>";
+    myTable+="<td style='width: 150px; text-align: right;'>" + myArray[7] + "</td></tr>";
+  
+    
+    myTable+="</table>";
+
+ document.getElementById('tablePrint').innerHTML = myTable;
+
+//-->
+</script> 
+
+<h2>PERSONAL DETAILS</h2>
+  
+<h2>Age:</h2><p id="age"></p> 
+<h2>Gender:</h2><p id="gender"></p>
+<h2>BMI:</h2><p id="output"></p>
+<h2>Patient's BMI is:</h2><p id="comment"></p>
+<script>
+        var age= 18;
+        document.getElementById("age").innerHTML = age
+            
+     
+        var gender = "F";
+        document.getElementById("gender").innerHTML = gender
+        var height=157;
+        var h = height/100;
+        var weight=58;
+           
+        var BMI=weight/Math.pow(h,2);
+        var output = Math.round(BMI*100)/100;
+            //Display result of calculation
+        document.getElementById("output").innerHTML = output;
+
+  
+            
+        if (output<18.5)
+        document.getElementById("comment").innerHTML = "Underweight";
+        if (output>=18.5 && output<=25)
+        document.getElementById("comment").innerHTML = "Normal";
+        if (output>=25 && output<=30)
+        document.getElementById("comment").innerHTML = "Obese";
+            
+        if (output>30)
+        document.getElementById("comment").innerHTML = "Overweight";
+    
+</script>
+            
+            
+</body>
+</html>
+<!-- Portfolio Gallery Grid -->
